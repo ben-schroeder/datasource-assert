@@ -26,8 +26,9 @@ public class DatabaseTestRule extends ExternalResource {
         this.dataSource = ds;
 
         // populate data
-        this.flyway = new Flyway();
-        this.flyway.setDataSource(ds);
+        this.flyway = Flyway.configure()
+                .dataSource(ds)
+                .load();
         this.flyway.migrate();
 
     }

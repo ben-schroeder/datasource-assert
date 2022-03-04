@@ -48,7 +48,7 @@ public class ProxyTestDataSourceAssertionsTest {
             new ProxyTestDataSourceAssert(ds).hasExecutionType(ExecutionType.IS_CALLABLE, atIndex(0));
             fail("asserts should failed");
         } catch (AssertionError error) {
-            assertThat(error.getMessage()).contains("an instance of any of:\n <[net.ttddyy.dsproxy.asserts.CallableExecution]>");
+            assertThat(error.getMessage()).containsIgnoringWhitespaces("an instance of any of:\n [net.ttddyy.dsproxy.asserts.CallableExecution]");
         }
 
     }

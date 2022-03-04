@@ -5,6 +5,7 @@ import net.ttddyy.dsproxy.asserts.StatementBatchExecution;
 import net.ttddyy.dsproxy.listener.QueryUtils;
 import org.assertj.core.api.AbstractCharSequenceAssert;
 import org.assertj.core.api.AbstractListAssert;
+import org.assertj.core.api.AbstractStringAssert;
 import org.assertj.core.api.Assertions;
 import org.assertj.core.api.ObjectAssert;
 import org.assertj.core.data.Index;
@@ -44,11 +45,11 @@ public class StatementBatchExecutionAssert extends AbstractExecutionAssert<State
         return Assertions.assertThat(this.actual.getQueries());
     }
 
-    public AbstractCharSequenceAssert<?, String> query(Index index) {
+    public AbstractStringAssert<?> query(Index index) {
         return query(index.value);
     }
 
-    public AbstractCharSequenceAssert<?, String> query(int index) {
+    public AbstractStringAssert<?> query(int index) {
         String query = this.actual.getQueries().get(index);
         return Assertions.assertThat(query);
     }

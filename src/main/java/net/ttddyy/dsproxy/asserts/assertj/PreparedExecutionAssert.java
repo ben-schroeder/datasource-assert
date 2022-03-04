@@ -6,7 +6,7 @@ import net.ttddyy.dsproxy.asserts.assertj.data.ExecutionParameter;
 import net.ttddyy.dsproxy.asserts.assertj.data.ExecutionParameters;
 import net.ttddyy.dsproxy.asserts.assertj.helper.ExecutionParameterAsserts;
 import net.ttddyy.dsproxy.proxy.ParameterKey;
-import org.assertj.core.api.AbstractCharSequenceAssert;
+import org.assertj.core.api.AbstractStringAssert;
 import org.assertj.core.api.Assertions;
 
 import java.util.LinkedHashMap;
@@ -196,7 +196,7 @@ public class PreparedExecutionAssert extends AbstractExecutionAssert<PreparedExe
         return extra.toString();
     }
 
-    public AbstractCharSequenceAssert<?, String> query() {
+    public AbstractStringAssert<?> query() {
         return Assertions.assertThat(this.actual.getQuery());
     }
 

@@ -3,7 +3,7 @@ package net.ttddyy.dsproxy.asserts.assertj;
 import net.ttddyy.dsproxy.QueryType;
 import net.ttddyy.dsproxy.asserts.StatementExecution;
 import net.ttddyy.dsproxy.listener.QueryUtils;
-import org.assertj.core.api.AbstractCharSequenceAssert;
+import org.assertj.core.api.AbstractStringAssert;
 import org.assertj.core.api.Assertions;
 
 /**
@@ -26,7 +26,7 @@ public class StatementExecutionAssert extends AbstractExecutionAssert<StatementE
         return this;
     }
 
-    public AbstractCharSequenceAssert<?, String> query() {
+    public AbstractStringAssert<?> query() {
         return Assertions.assertThat(this.actual.getQuery());
     }
 

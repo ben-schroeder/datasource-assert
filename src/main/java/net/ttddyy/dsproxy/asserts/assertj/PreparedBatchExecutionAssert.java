@@ -5,7 +5,7 @@ import net.ttddyy.dsproxy.asserts.PreparedBatchExecutionEntry;
 import net.ttddyy.dsproxy.asserts.assertj.data.ExecutionParameters;
 import net.ttddyy.dsproxy.asserts.assertj.helper.BatchExecutionEntryAsserts;
 import net.ttddyy.dsproxy.asserts.assertj.helper.ExecutionParameterAsserts;
-import org.assertj.core.api.AbstractCharSequenceAssert;
+import org.assertj.core.api.AbstractStringAssert;
 import org.assertj.core.api.Assertions;
 
 /**
@@ -55,7 +55,7 @@ public class PreparedBatchExecutionAssert extends AbstractExecutionAssert<Prepar
         return this;
     }
 
-    public AbstractCharSequenceAssert<?, String> query() {
+    public AbstractStringAssert<?> query() {
         return Assertions.assertThat(this.actual.getQuery());
     }
 
